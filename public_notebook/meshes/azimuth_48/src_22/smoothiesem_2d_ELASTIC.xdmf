@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<!DOCTYPE Xdmf SYSTEM "Xdmf.dtd" []>
+<Xdmf Version="2.0">
+	<Domain>
+			<Topology TopologyType="Quadrilateral" NumberOfElements="57952">
+			<DataItem Format="HDF" DataType="Int" Dimensions="57952 4">
+					smoothiesem_2d.h5:/ELASTIC/connectivity
+				</DataItem>
+				</Topology>
+			<Geometry GeometryType="XY">
+			<DataItem Format="HDF" Dimensions="3622 25 2">
+				smoothiesem_2d.h5:/ELASTIC/coordinates</DataItem>
+			</Geometry>
+	<Grid Name="Salvus Wavefield Data" GridType="Collection" CollectionType="Temporal">
+		<Grid Name="Wavefield_0.000000 ">
+		<Time Value="0" />
+		<Topology Reference="/Xdmf/Domain/Topology[1]"/>
+		<Geometry Reference="/Xdmf/Domain/Geometry[1]"/>
+			<Attribute Name="RHO" AttributeType="Scalar" Center="Node">
+			<DataItem ItemType="HyperSlab" Dimensions="1 3622 1 25 " Type="HyperSlab">
+				<DataItem Dimensions="3 4" Format="XML">
+					0 0 0 0
+					1 1 1 1
+					1 3622 1 25
+				</DataItem>
+				<DataItem Name="Points" Dimensions="1 3622 3 25" Format="HDF">
+					smoothiesem_2d.h5:/ELASTIC/data
+				</DataItem>
+			</DataItem>
+			</Attribute>
+			<Attribute Name="LAMBDA" AttributeType="Scalar" Center="Node">
+			<DataItem ItemType="HyperSlab" Dimensions="1 3622 1 25 " Type="HyperSlab">
+				<DataItem Dimensions="3 4" Format="XML">
+					0 0 1 0
+					1 1 1 1
+					1 3622 1 25
+				</DataItem>
+				<DataItem Name="Points" Dimensions="1 3622 3 25" Format="HDF">
+					smoothiesem_2d.h5:/ELASTIC/data
+				</DataItem>
+			</DataItem>
+			</Attribute>
+			<Attribute Name="MU" AttributeType="Scalar" Center="Node">
+			<DataItem ItemType="HyperSlab" Dimensions="1 3622 1 25 " Type="HyperSlab">
+				<DataItem Dimensions="3 4" Format="XML">
+					0 0 2 0
+					1 1 1 1
+					1 3622 1 25
+				</DataItem>
+				<DataItem Name="Points" Dimensions="1 3622 3 25" Format="HDF">
+					smoothiesem_2d.h5:/ELASTIC/data
+				</DataItem>
+			</DataItem>
+			</Attribute>
+		</Grid>
+	</Grid>
+	</Domain>
+</Xdmf>
